@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Game Lompat</title>
+<meta name="description" content="Game lompat (endless runner) dengan toko latar, karakter, boss, dan papan peringkat online.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%83%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>🏃 Game Lompat</h1>
+<div class="bar hide"><div>Skor: <span id="s">0</span></div><div>Rekor: <span id="h">0</span></div></div>
+<div id="rot" class="rot"><div class="ph">📱</div><b>Putar layar ke mode landscape</b><span>Game hanya tampil di layar lebar (16:9)</span></div>
+<div class="wrap">
+  <canvas id="c" width="720" height="300"></canvas>
+  <button id="fs" class="fs" title="Layar penuh">⤢</button>
+  <button id="sh" class="sh hide">🔫 Tembak</button>
+  <button id="pz" class="pz hide">⏸ Pause</button>
+  <div class="pause hide" id="po"><b id="pt">PAUSE</b><span id="pi"></span><div class="snd"><button id="rs">▶ Resume</button><button id="rt" class="hide">↻ Ulangi</button><button id="mu" class="sec">🏠 Menu Utama</button></div><div class="snd"><button id="st2" class="sec">⚙ Setelan</button></div></div>
+  <div class="msg hide" id="set"><b>⚙ Setelan</b><div class="vol"><label>🎵 Musik<input type="range" id="vm" min="0" max="100" value="100"><span id="vmv">100%</span></label><label>🔊 Efek<input type="range" id="ve" min="0" max="100" value="100"><span id="vev">100%</span></label></div><button id="wxb" class="sec">🌦 Cuaca: ON</button><button id="sb" class="sec">← Kembali</button></div>
+  <div class="msg" id="m"><button class="iu" id="iu"></button><div id="mtxt"><b class="ttl">🏃 GAME LOMPAT</b><span>Ketuk atau tekan Spasi untuk melompat. Ketuk dua kali untuk lompat ganda.</span><span>Hindari rintangan &amp; musuh, kumpulkan koin!</span><div class="mrow"><span class="ic" id="ic">🪙 Koin tersimpan: 0</span></div></div><div class="mrow"><button id="b">Mulai</button><button id="ts" class="sec">🛒 Toko</button><button id="se" class="sec">⚙ Setelan</button><button id="lbo" class="sec">🏆 Peringkat</button></div></div>
+  <div class="msg hide" id="toko"><b>Toko Latar Belakang</b><span class="ic" id="tc">🪙 Koin: 0</span><div class="cards" id="tcards"></div><span id="tmsg"></span><div class="snd"><label class="up">🖼️ Upload latar<input type="file" id="fb" accept="image/*" hidden></label><button id="tb" class="sec">← Kembali</button></div></div>
+  <div class="msg hide" id="lb"><b>🏆 Papan Peringkat</b><div class="snd"><button id="lt1" class="sec act">🌐 Online</button></div><span class="sub" id="lbs"></span><div id="lbl"></div><button id="lbb" class="sec">← Kembali</button></div>
+  <div class="msg hide" id="ban"><b class="ttl">🚫 BANNED</b><span id="bt">Username “0000” tidak diizinkan.</span><span>Kamu tidak bisa masuk ke game.</span><button id="bch">✏️ Ubah Username</button></div>
+  <div class="msg hide" id="unm"><b class="ttl" id="utt">Selamat Datang!</b><span id="usb">Masukkan username untuk masuk ke game</span><input id="uin" maxlength="12" placeholder="Username (maks. 12 huruf)" autocomplete="off"><span id="uerr"></span><div class="mrow"><button id="usv">Masuk</button><button id="ucn" class="sec hide">Batal</button></div></div>
+  <div class="msg hide" id="pilih"><div class="phead"><b id="ptl">Pilih Karakter</b><span id="pmsg"></span></div><span class="sub">Karakter Awal</span><div class="cards" id="cards"></div><span class="sub">Cyberpunk &amp; Astronot ▼</span><div class="cards" id="cards2"></div><span class="sub">Mesir Kuno &amp; Yunani Kuno ▼</span><div class="cards" id="cards3"></div><span class="sub">Budaya Indonesia ▼</span><div class="cards" id="cards4"></div><div class="snd pfoot"><button id="pl">▶ Main</button><label class="up">🖼️ Ganti karakter<input type="file" id="f" accept="image/*" hidden></label><button id="r" class="sec hide">Karakter awal</button><button id="bk" class="sec">← Kembali</button></div></div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
